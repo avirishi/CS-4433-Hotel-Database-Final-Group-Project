@@ -7,7 +7,7 @@ if(isset($_REQUEST["submit"])) {
     $RoomID = $_POST["RoomID"];
 
 // sql to delete a record
-    $sql = "DELETE FROM customer WHERE CustomerID =  $CustomerID ";
+    $sql = "DELETE FROM customer  WHERE CustomerID =  $CustomerID ";
     $sql1 = "DELETE FROM reservation WHERE ReservationID = $ReservationID";
     $sql2 = "DELETE FROM room WHERE RoomID = $RoomID";
 

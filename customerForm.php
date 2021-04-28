@@ -36,7 +36,7 @@ if(isset($_REQUEST["submit"])) {
         $RoomPrice = 160;
     }
 
-    /** insert user-input data into table  */
+    /** insert user-input data into table customer  */
     $sql = mysqli_query($conn, "INSERT INTO customer (FirstName,LastName, Street, City, State, ZipCode, PhoneNumber, Email)
     VALUES('$FirstName','$LastName','$Street','$City','$State','$ZipCode','$PhoneNumber','$Email')");
     echo "<br>KEEP NOTE OF BELOW INFORMATION<br>";
@@ -57,8 +57,12 @@ if(isset($_REQUEST["submit"])) {
 
     echo "<br>Your RoomID is: ".mysqli_insert_id($conn);
     echo "<br>Your Room Price is: ".$RoomPrice;
+
+
+
 }
 flush();
+/** redirect to page */
 if(isset($_REQUEST["search"])) {
     header("location:http://localhost:63342/search.php/search.php");
     exit();
