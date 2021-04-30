@@ -21,6 +21,7 @@ if(isset($_REQUEST["submit"])) {
     $RoomType = $_POST['RoomType'];
     $roomArray = explode(" $", $RoomType);
     #$RoomPrice = $_POST['RoomPrice'];
+    $TotalBill = ['TotalBill'];
 
     /* Price for room type */
     if($roomArray[0] == "One Queen Bed"){
@@ -50,6 +51,7 @@ if(isset($_REQUEST["submit"])) {
 
     echo "<br>Your ReservationID is: ".mysqli_insert_id($conn);
 
+
     /**Set HotelID to 1 and enter value into table room*/
     $HotelID = 1;
     $sql = mysqli_query($conn, "INSERT INTO room (HotelID, RoomType, RoomPrice)
@@ -57,7 +59,6 @@ if(isset($_REQUEST["submit"])) {
 
     echo "<br>Your RoomID is: ".mysqli_insert_id($conn);
     echo "<br>Your Room Price is: ".$RoomPrice;
-
 
 
 }
@@ -86,6 +87,7 @@ if(isset($_REQUEST["cancel"])) {
 <body>
 <h1> Microtel Inn & Suites </h1>
 <h2><br>Reservation</h2>
+
 <form action="" method="post">
     <p>
         <label for="FirstName">First Name:</label>
